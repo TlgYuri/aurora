@@ -5,9 +5,9 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://mysql的ip:3306/aurora?serverTimezone=Asia/Shanghai&allowMultiQueries=true
-    username: 账号
-    password: 密码
+    url: jdbc:mysql://ip:3306/aurora?serverTimezone=Asia/Shanghai&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: pwd
     hikari:
       minimum-idle: 10
       idle-timeout: 180000
@@ -21,14 +21,14 @@ spring:
   redis:
     host: redis的ip
     port: 6379
-    password: 密码
-    database: 1
+    #password: 密码
+    database: 9
     lettuce:
       pool:
-        min-idle: 10
         max-idle: 100
         max-active: 100
         max-wait: 10000
+        min-idle: 10
 
   rabbitmq:
     host: rabbitmq的ip
@@ -81,13 +81,13 @@ search:
   mode: elasticsearch
 
 upload:
-  mode: oss
-  oss:
-    url: http://Bucket域名/
-    endpoint: OSS配置endpoint
-    accessKeyId: OSS配置accessKeyId
-    accessKeySecret: OSS配置accessKeySecret
-    bucketName: OSS配置bucketName
+  mode: minio
+#  oss:
+#    url: http://Bucket域名/
+#    endpoint: OSS配置endpoint
+#    accessKeyId: OSS配置accessKeyId
+#    accessKeySecret: OSS配置accessKeySecret
+#    bucketName: OSS配置bucketName
   minio:
     url: http://minio的ip:9000/
     endpoint: http://minio的ip:9000
@@ -96,7 +96,7 @@ upload:
     bucketName: 桶的名称
 
 website:
-  url: https://前台域名
+  url: https://blog.yurihentai.cn
 
 qq:
   app-id: QQ APPID

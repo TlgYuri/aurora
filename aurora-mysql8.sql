@@ -1,6 +1,8 @@
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
+CREATE DATABASE IF NOT EXISTS `aurora` DEFAULT CHARACTER SET = utf8mb4;
+
 -- ----------------------------
 -- Table structure for t_about
 -- ----------------------------
