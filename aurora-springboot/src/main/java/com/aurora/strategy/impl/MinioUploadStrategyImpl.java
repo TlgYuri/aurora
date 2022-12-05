@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 
 import java.io.InputStream;
 
+import static com.aurora.constant.CommonConstant.SLANT;
+
 @Service("minioUploadStrategyImpl")
 public class MinioUploadStrategyImpl extends AbstractUploadStrategyImpl {
 
@@ -39,7 +41,7 @@ public class MinioUploadStrategyImpl extends AbstractUploadStrategyImpl {
 
     @Override
     public String getFileAccessUrl(String filePath) {
-        return minioProperties.getUrl() + filePath;
+        return minioProperties.getUrl() + SLANT + minioProperties.getBucketName() + SLANT + filePath;
     }
 
     private MinioClient getMinioClient() {

@@ -16,6 +16,8 @@ public interface CommonConstant {
 
     int DEFAULT_ABOUT_ID = 1;
 
+    String SLANT = "/";
+
     String PRE_TAG = "<mark>";
 
     String POST_TAG = "</mark>";
