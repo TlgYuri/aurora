@@ -20,4 +20,6 @@ module.exports = defineConfig({
   chainWebpack: (config) => {
     config.resolve.alias.set('@', resolve('src'))
   }
+  // todo 尝试改为相对路径访问，未遂
+  // , publicPath: "./"
 })
